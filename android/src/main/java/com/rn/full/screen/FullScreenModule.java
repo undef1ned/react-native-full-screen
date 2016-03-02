@@ -21,15 +21,14 @@ import java.util.List;
  *
  * Created by ywu on 15/9/23.
  */
-public class ReactImageZoom implements ReactPackage {
-    Activity activity;
-    public ReactImageZoom(Activity activity){
-        this.activity = activity;
+public class FullScreenModule implements ReactPackage {
+    public FullScreenModule(){
+
     }
 
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
-    return  Arrays.<NativeModule>asList(new FullScreen(reactApplicationContext, activity));
+    return  Arrays.<NativeModule>asList(new FullScreen(reactApplicationContext));
   }
 
   @Override

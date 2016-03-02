@@ -1,30 +1,35 @@
-# React image pan and zoom for Android
+# React native full screen functionality Android
 
-This is still very basic since I am quite new to React. There is plenty of room for improvment by adding
-additional react bindings for props and callbacks.
+There is plenty of room for improvment by adding additional react bindings for props and callbacks.
+
+
+##### Props:
+| Property | Type | Default | Description |
+|---------------|----------|--------------|----------------------------------------------------------------|
+| souce | Object | null | same as the react image format |
+
 
 ## Include in your App
-
 
 Installation
 ------------
 
-Install the npm package [`react-native-image-zoom`](https://www.npmjs.com/package/react-native-image-zoom). Inside your React Native project, run ([example](https://github.com/Anthonyzou/react-native-image-zoom/tree/master/example)):
+Install the npm package [`react-native-full-screen`](https://www.npmjs.com/package/react-native-full-screen). Inside your React Native project, run ([example](https://github.com/Anthonyzou/react-native-full-screen/tree/master/example)):
 ```bash
-npm install --save react-native-image-zoom
+npm install --save react-native-full-screen
 ```
 
 In `android/settings.gradle`, remove the line `include ':app'` and add the following lines
 ```
-include :react-native-image-zoom'
-project(':react-native-image-zoom').projectDir = file('../node_modules/react-native-image-zoom/android')
+include :react-native-full-screen'
+project(':react-native-full-screen').projectDir = file('../node_modules/react-native-full-screen/android')
 ```
 **NOTE** : If you have included other libraries in your project, the `include` line will contain the other dependencies too.
 
-In `android/app/build.gradle`, add a dependency to `':react-native-image-zoom'`
+In `android/app/build.gradle`, add a dependency to `':react-native-full-screen'`
 ```
 dependencies {
-    compile project(':react-native-image-zoom')
+    compile project(':react-native-full-screen')
 }
 ```
 
@@ -43,3 +48,12 @@ public class MainActivity extends ReactActivity {
       );
     }
 ```
+
+---
+
+TeamLockr full screen
+Team Lockr full screen for react native
+
+These are functions created by the TeamLockr Team created for the TeamLockr platform.
+
+---

@@ -10,26 +10,40 @@ import React, {
   Text,
   ScrollView,
   Dimensions,
+  TouchableHighlight,
   TextInput,
   View,
 } from 'react-native';
 
-import Image from 'react-native-image-zoom'
+import { NativeModules } from 'react-native';
+const FullScreen = NativeModules.FullScreen;
+
 import {Actions, Router, Route, Schema, Animations, TabBar} from 'react-native-router-flux'
 
 class Example extends Component {
   constructor(a,b){
     super(a,b)
     this.state = {
-      text:'http://placehold.it/500'
     }
   }
+
   render() {
+    console.log(FullScreen)
     return (
       <View style={{flex:1}}>
-        <TextInput onChangeText={(text) => this.setState({text:text})} value={this.state.text}></TextInput>
-        <Image style={styles.image} src={this.state.text}></Image>
-        <Image tintColor="rgba(0,0,0,.5)" style={styles.image} src={this.state.text} scale="2.0" scaleType="center"></Image>
+
+        <TouchableHighlight onPress={()=>{
+            FullScreen.offFullScreen()
+          }}>
+          <Text>FullScreen on</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={()=>{
+            FullScreen.onFullScreen()
+          }}>
+          <Text>FullScreen off</Text>
+        </TouchableHighlight>
+
+
       </View>
     );
   }
