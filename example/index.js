@@ -10,13 +10,14 @@ import React, {
   Text,
   ScrollView,
   Dimensions,
+  TouchableWithoutFeedback,
   TouchableHighlight,
   TextInput,
   View,
+  Image,
 } from 'react-native';
 
-import { NativeModules } from 'react-native';
-const FullScreen = NativeModules.FullScreen;
+import FullScreen, {ToggleView} from 'react-native-full-screen'
 
 import {Actions, Router, Route, Schema, Animations, TabBar} from 'react-native-router-flux'
 
@@ -24,27 +25,19 @@ class Example extends Component {
   constructor(a,b){
     super(a,b)
     this.state = {
+      focus:true
     }
   }
-
+  ComponentWillMount(){
+    FullScreen.onFullScreen();
+  }
   render() {
-    console.log(FullScreen)
+
     return (
-      <View style={{flex:1}}>
+      <ToggleView style={{flex:1,alignItems:'center', justifyContent:'center'}}>
+        <Image style={{height:500,width:500}} source={{uri:"http://placehold.it/500"}}></Image>
 
-        <TouchableHighlight onPress={()=>{
-            FullScreen.offFullScreen()
-          }}>
-          <Text>FullScreen on</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={()=>{
-            FullScreen.onFullScreen()
-          }}>
-          <Text>FullScreen off</Text>
-        </TouchableHighlight>
-
-
-      </View>
+      </ToggleView>
     );
   }
 }

@@ -3,16 +3,24 @@
 There is plenty of room for improvment by adding additional react bindings for props and callbacks.
 
 
-##### Props:
+##### Props: ToggleView
+
+```html
+  <ToggleView style={{flex:1,alignItems:'center', justifyContent:'center'}}>
+    <Image style={{height:500,width:500}} source={{uri:"http://placehold.it/500"}}></Image>
+
+  </ToggleView>
+```
+
 | Property | Type | Default | Description |
 |---------------|----------|--------------|----------------------------------------------------------------|
-| souce | Object | null | same as the react image format |
+| delay | number | 3000 | how long to delay hide |
+| delayHide | boolean | true | if there should be a delayed hide event |
 
 
-## Include in your App
-
-Installation
 ------------
+
+## Android Installation
 
 Install the npm package [`react-native-full-screen`](https://www.npmjs.com/package/react-native-full-screen). Inside your React Native project, run ([example](https://github.com/Anthonyzou/react-native-full-screen/tree/master/example)):
 ```bash
@@ -27,6 +35,7 @@ project(':react-native-full-screen').projectDir = file('../node_modules/react-na
 **NOTE** : If you have included other libraries in your project, the `include` line will contain the other dependencies too.
 
 In `android/app/build.gradle`, add a dependency to `':react-native-full-screen'`
+
 ```
 dependencies {
     compile project(':react-native-full-screen')
@@ -35,7 +44,7 @@ dependencies {
 
 Next, you need to change the `MainActivity` of your app to register `ReactNativeDialogsPackage` :
 ```java
-import com.image.zoom.ReactImageZoom; // add this import
+import com.rn.full.screen.FullScreenModule; // add this import
 
 public class MainActivity extends ReactActivity {
     //...
@@ -44,7 +53,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new ReactImageZoom() // add this manager
+          new FullScreenModule() // add this manager
       );
     }
 ```
