@@ -29,7 +29,7 @@ npm install --save react-native-full-screen
 
 In `android/settings.gradle`, remove the line `include ':app'` and add the following lines
 ```
-include :react-native-full-screen'
+include ':react-native-full-screen'
 project(':react-native-full-screen').projectDir = file('../node_modules/react-native-full-screen/android')
 ```
 **NOTE** : If you have included other libraries in your project, the `include` line will contain the other dependencies too.
