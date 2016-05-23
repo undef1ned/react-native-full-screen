@@ -1,7 +1,9 @@
-
 import React, {
-  NativeModules,
   Component,
+} from 'react';
+
+import {
+  NativeModules,
   View,
   TouchableWithoutFeedback,
 } from 'react-native';
