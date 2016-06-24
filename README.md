@@ -42,7 +42,7 @@ dependencies {
 }
 ```
 
-Next, you need to change the `MainActivity` of your app to register `ReactNativeDialogsPackage` :
+Next, you need to change the `MainActivity` of your app to register `FullScreenModule` :
 ```java
 import com.rn.full.screen.FullScreenModule; // add this import
 
