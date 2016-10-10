@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Anthonyzou/react-native-full-screen/issues"
   },
-  "homepage": "https://github.com/Anthonyzou/react-native-full-screen#readme"
+  "homepage": "https://github.com/Anthonyzou/react-native-full-screen#readme",
+  "dependencies": {
+    "debounce": "^1.0.0"
+  }
 }
