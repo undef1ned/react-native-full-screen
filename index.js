@@ -11,7 +11,7 @@ import {
 const FullScreen = NativeModules.FullScreen
 export default FullScreen;
 
-import _ from 'lodash';
+import debounce from 'debounce';
 
 export class ToggleView extends Component {
   constructor(props,context){
@@ -19,8 +19,8 @@ export class ToggleView extends Component {
     this.state = {
       focus:this.props.focus||true
     }
-    this.offFullScreen = _.debounce(FullScreen.offFullScreen,250);
-    this.delayHide = _.debounce(() => {
+    this.offFullScreen = debounce(FullScreen.offFullScreen,250);
+    this.delayHide = debounce(() => {
         FullScreen.onFullScreen();
         this.setState({focus:false});
     },this.props.delay || 3000);
